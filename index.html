@@ -248,8 +248,10 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						<h2>Оптимизации</h2>
+						# Оптимизации
 
+						+ FuntionCall - Optimizers
+						+ SkipVariantInit
 					</script>
 				</section>
 
@@ -268,11 +270,34 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						<h2>Zephir Runtime</h2>
-						
+						## Zephir Runtime
+
+						Zephir Runtime - это JIT компилятор встроенный в рассширение.
 					</script>
 				</section>
 
+
+				<section data-markdown>
+					<script type="text/template">
+					myfunctions.zep
+
+					```zep
+						fn myFucntion(var a)
+						{
+							return 1;
+						}
+					```
+
+					index.php
+
+					```zep
+						include_once 'myfunctions.zep';
+
+						$rtnVal = myFucntion(1);
+						var_dump($rtnVal);
+					```
+					</script>
+				</section>
 
 				<section data-markdown>
 					<script type="text/template">

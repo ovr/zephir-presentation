@@ -130,6 +130,15 @@
 					<p>Zephir — это высокоуровневый язык программирования с открытым исходным кодом для быстрого и простого создания PHP расширений.</p>
 				</section>
 
+				<section data-markdown>
+					<script type="text/template">
+						## Как изнутри?
+
+						C Parser (json) -> Zephir Core PHP
+
+						Precompile - ClassDefintion -> Statements -> Expr
+					</script>
+				</section>
 
 				<section>
 					<h2>Особенности</h2>
@@ -245,6 +254,61 @@
 					</script>
 				</section>
 
+				<section data-markdown>
+					<script type="text/template">
+						For with range
+
+						```zep
+							for n in [1..100] {
+
+							}
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Built-in
+
+						Встроенные методы для всех типов.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Built-in int
+
+						```
+							var a = -1;
+							var_dump(a->abs()); // int(1)
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						Built-in array map
+
+						```zep
+						[4, 8, 12, 32, 5]->map(
+							function(int! x) {
+								return x * x;
+							}
+						)
+						```
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+						Closures short syntax
+
+						```zep
+						[4, 8, 12, 32, 5]->map(x => x * x);
+						```
+					</script>
+				</section>
 
 				<section data-markdown>
 					<script type="text/template">

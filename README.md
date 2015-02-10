@@ -20,13 +20,12 @@ Phalcon и Zephir
 
 6. 
 
-- Как все начиналось Phalcon 1
+- Phalcon 1
 - Производительность
-- Написание проектов
 - Zephir/ Зачем? Как устроен?
 - Что скрывается внтури Zend Engine
 - Zephir Kernel?
-- Zephir runtime?
+- Zephir Runtime?
 - Phalcon 2
 - Phalcon/Zephir планы на будущее
    

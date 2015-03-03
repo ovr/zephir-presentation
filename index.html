@@ -44,13 +44,8 @@
 				<section>
 					<h2>В ближайшие 30 минут</h2>
 					<ul>
-					    <li>Фреймворки на си для PHP</li>
-					    <li>Phalcon
-					        <ul>
-					            <li>Знакомство</li>
-					            <li>Призводительность</li>
-					        </ul>
-					    </li>
+					    <li>Фреймворки на Си для PHP</li>
+					    <li>Phalcon</li>
 					    <li>Zephir</li>
 					    <li>Zephir Runtime</li>
 					    <li>Phalcon 2</li>
@@ -65,16 +60,21 @@
 				</section>
 
 				<section data-markdown>
-		                    # Плюсы
-		
-		                    * Производительность
-		                    * Низкое потребление памяти
+					<script type="text/template">
+						# Плюсы
+
+						+ Производительность
+						+ Низкое потребление памяти
+					</script>
 				</section>
 
-		                <section data-markdown>
-		                    # Минусы
-		
-		                    - Сложно исправлять/разрабатывать
+				<section data-markdown>
+					<script type="text/template">
+						# Минусы
+
+						+ Разработка и исправление
+						+ Отладка
+					</script>
 				</section>
 
 				<section>
@@ -132,9 +132,9 @@
 					</ul>
 				</section>
 
-		                <section>
-		                    <h2>А что же для Zend Engine?</h2>
-		                </section>
+				<section>
+					<h2>А что же для Zend Engine?</h2>
+				</section>
 
 				<section>
 					<h2>Zephir</h2>
@@ -355,7 +355,7 @@
 
 				<section data-markdown>
 					<script type="text/template">
-					myfunctions.zep
+					func.zep
 
 					```zep
 						fn myFucntion(var a)
@@ -367,54 +367,60 @@
 					index.php
 
 					```zep
-						include_once 'myfunctions.zep';
+						include_once 'func.zep';
 
-						$rtnVal = myFucntion(1);
-						var_dump($rtnVal);
+						$result = myFucntion(1);
+						var_dump($result);
 					```
 					</script>
 				</section>
 
-		                <section>
-		                    <h2>Memory Managmen</h2>
-		                    <ul>
-		                        <li>Zephir Memory Manager # Zend MM</li>
-		                    </ul>
-		                </section>
+				<section>
+					<h2>Memory Manager</h2>
+					<ul>
+						<li>Zephir Memory Manager # Zend MM</li>
+					</ul>
+				</section>
 
 				<section data-markdown>
 					<script type="text/template">
 						# Будущее Zephir
-						
+
 						+ Больше оптимизаций
 						+ Переработка архитектуры на раздельные компоненты
 						+ Больше бекендов (PHP, Hack, PHP-CPP)
-						+ Развития Zephir Runtime и ZephirVM
+						+ Развития Zephir Runtime
+						+ Возможно попробуем реализовать ZephirVM
 					</script>
 				</section>
 
-		                <section data-markdown>
-		                    <script type="text/template">
-		                        # Phalcon 2
-		
-		
-		                    </script>
-		                </section>
+				<section data-markdown>
+					<script type="text/template">
+						# Phalcon 2
 
-		                <section data-markdown>
-		                    <script type="text/template">
-		                        # Производительность приложений на Phalcon 2
-							
-					| Тип приложения                   | min | avg | max | 90% fast |
-					|----------------------------------|-----|-----|-----|----------|
-					| Phalcon 2 + Phalcon ORM          | 200 | 200 | 200 | 200      |
-					| Phalcon 2 + Doctrine 2           | 200 | 200 | 200 | 200      |
-					| Daemonize Phalcon 2 + Doctrine 2 | 200 | 200 | 200 | 200      |
-		                    </script>
-		                </section>
+						+ 99.99% Совместимый фреймворк
+						+ Переписан на Zephir
+						+ Улучшенная кодовая база
+						+ Улучшеные тесты
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Производительность
+
+						@todo
+
+						| Тип приложения                   | min  | avg  | max  |
+						|----------------------------------|------|------|------|
+						| Phalcon 2 + Phalcon ORM          | 200  | 200  | 200  |
+						| Phalcon 2 + Doctrine 2           | 270  | 324  | 340  |
+						| Daemonize Phalcon 2 + Doctrine 2 | 1000 | 1000 | 2000 |
+					</script>
+				</section>
 
 				<section style="text-align: left;">
-					<h1>THE END</h1>
+					<h1>The End</h1>
 					<p>
 						- <a href="http://slides.com">Try the online editor</a> <br>
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>

@@ -165,7 +165,7 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						## Самые видимые различия
+						## Самые видимые различия после PHP
 
 						+ Ура больше нет <?php
 						+ Прощай $
@@ -317,23 +317,30 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						# Оптимизации
+					# Оптимизации
 
-						+ FuntionCall - Optimizers
-						+ SkipVariantInit
+					+ FuntionCall - Optimizers
+					+ Constant folding
+					+ SkipVariantInit
 					</script>
 				</section>
 
 				<section data-markdown>
 					<script type="text/template">
-						Транслятор хитер
+						
+					</script>
+				</section>
+				
+				<section data-markdown>
+					<script type="text/template">
+					Constant folding
 
-						```zep
-							int a = 1;
-							let a = pow(1, 10000);
+					```zep
+						int a = 1;
+						let a = pow(1, 10000);
 
-							return a;
-						```
+						return a;
+					```
 					</script>
 				</section>
 
@@ -368,14 +375,14 @@
 					</script>
 				</section>
 
-                <section>
-                    <h2>Memory Managmen</h2>
-                    <ul>
-                        <li>Zephir Memory Manager # Zend MM</li>
-                    </ul>
-                </section>
+		                <section>
+		                    <h2>Memory Managmen</h2>
+		                    <ul>
+		                        <li>Zephir Memory Manager # Zend MM</li>
+		                    </ul>
+		                </section>
 
-                <section data-markdown>
+				<section data-markdown>
 					<script type="text/template">
 						# Будущее Zephir
 						
@@ -386,20 +393,20 @@
 					</script>
 				</section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        # Phalcon 2
+		                <section data-markdown>
+		                    <script type="text/template">
+		                        # Phalcon 2
+		
+		
+		                    </script>
+		                </section>
 
-
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        # Производительность приложений на Phalcon 2
-
-                    </script>
-                </section>
+		                <section data-markdown>
+		                    <script type="text/template">
+		                        # Производительность приложений на Phalcon 2
+		
+		                    </script>
+		                </section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
@@ -408,17 +415,13 @@
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 					</p>
 				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,

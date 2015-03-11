@@ -1,466 +1,488 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Phalcon 1/2 & Zephir</title>
+<head>
+	<meta charset="utf-8">
+	<title>Phalcon 1/2 & Zephir</title>
 
-		<meta name="author" content="Dmitry Patsura">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="author" content="Dmitry Patsura">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>Сладкое будущее:</h1>
-					<h2>Phalcon и Zephir</h2>
-					<p>
-						<small><a href="http://dmtry.me/about">Dmitry Patsura</a> / <a href="https://github.com/ovr">@ovr</a></small>
-					</p>
-				</section>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<h1>Сладкое будущее:</h1>
+
+			<h2>Phalcon и Zephir</h2>
+
+			<p>
+				<small><a href="http://dmtry.me/about">Dmitry Patsura</a> / <a href="https://github.com/ovr">@ovr</a>
+				</small>
+			</p>
+		</section>
 
 
-				<section>
-					<h2>В ближайшие 30 минут</h2>
+		<section>
+			<h2>В ближайшие 30 минут</h2>
+			<ul>
+				<li>Фреймворки на Си для PHP</li>
+				<li>Phalcon</li>
+				<li>Zephir</li>
+				<li>Zephir Runtime</li>
+				<li>Phalcon 2</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Phalcon</h2>
+
+			<p>
+				Phalcon - это веб-фреймворк с высокой производительностью и низким потреблением ресурсов, собранный в
+				виде Си-расширения для PHP.
+			</p>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Плюсы
+
+				+ Производительность
+				+ Низкое потребление памяти
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Минусы
+
+				+ Разработка и исправление
+				+ Отладка
+			</script>
+		</section>
+
+		<section>
+			<h2>Производительность</h2>
+
+			<p>
+				@todo новую
+			</p>
+		</section>
+
+		<!--<section>-->
+		<!--	<h2>Потребление памяти</h2>-->
+		<!--	<p>-->
+		<!--		@todo новую-->
+		<!--	</p>-->
+		<!--</section>-->
+
+		<section>
+			<h2>Что внутри</h2>
+
+			<p>
+				Си-код
+				Работа с Zend Engine
+			</p>
+		</section>
+
+		<section>
+			<p>
+				<img src="img/2.png">
+			</p>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				<h3>Си для PHP разработчика это сложно</h3>
+				Как же исправить ситуацию?
+			</script>
+		</section>
+
+		<section>
+			<h2>Это DSL</h2>
+			<ul>
+				<li>
+					Java
 					<ul>
-					    <li>Фреймворки на Си для PHP</li>
-					    <li>Phalcon</li>
-					    <li>Zephir</li>
-					    <li>Zephir Runtime</li>
-					    <li>Phalcon 2</li>
+						<li>Scala, Groovy, Clojure</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2>Phalcon</h2>
-					<p>
-						Phalcon - это веб-фреймворк с высокой производительностью и низким потреблением ресурсов, собранный в виде Си-расширения для PHP.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						# Плюсы
-
-						+ Производительность
-						+ Низкое потребление памяти
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						# Минусы
-
-						+ Разработка и исправление
-						+ Отладка
-					</script>
-				</section>
-
-				<section>
-					<h2>Производительность</h2>
-					<p>
-						@todo новую
-					</p>
-				</section>
-
-				<!--<section>-->
-				<!--	<h2>Потребление памяти</h2>-->
-				<!--	<p>-->
-				<!--		@todo новую-->
-				<!--	</p>-->
-				<!--</section>-->
-
-				<section>
-					<h2>Что внутри</h2>
-					<p>
-						Си-код 
-						Работа с Zend Engine
-					</p>
-				</section>
-
-				<section>
-					<p>
-						<img src="img/2.png">
-					</p>
-				</section>
-				
-				<section data-markdown>
-					<script type="text/template">
-						<h3>Си для PHP разработчика это сложно</h3>
-						Как же исправить ситуацию?
-					</script>
-				</section>
-
-				<section>
-					<h2>Это DSL</h2>
+				</li>
+				<br/>
+				<li>
+					Javascript
 					<ul>
-						<li>
-							Java
-							<ul>
-								<li>Scala, Groovy, Clojure</li>
-							</ul>
-						</li>
-						<br />
-						<li>
-							Javascript
-							<ul>
-								<li>CoffeeScript, LiveScript, TypeScript</li>
-							</ul>
-						</li>
-						<br />
+						<li>CoffeeScript, LiveScript, TypeScript</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2>А что же для Zend Engine?</h2>
-				</section>
-
-				<section>
-					<h2>Zephir</h2>
-					<p>Zephir - Ze(nd Engine) Ph(p) I(nt)r(mediate)</p>
-					<p>Zephir — это высокоуровневый язык программирования с открытым исходным кодом для быстрого и простого создания PHP расширений.</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Как изнутри?
-
-						C Parser (json) -> Zephir Core PHP
-
-						Precompile - ClassDefintion -> Statements -> Expr
-					</script>
-				</section>
-
-				<section>
-					<h2>Особенности</h2>
-					<ul>
-						<li>dynamic/static typing</li>
-						<li>Memory safety</li>
-						<li>Ahead-of-time (AOT) compiler to provide predictable performance</li>
-						<li>Restricted procedural programming, promoting OOP</li>
-						<li>Reduced execution overhead compared with full compilation</li>
-					</ul>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Самые видимые различия после PHP
-
-						+ Ура больше нет <?php
-						+ Прощай $
-						+ Переменная должна быть обьявлена перед использованием
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						#### Сторогая и динамическая типизация
-
-						```Zephir
-							namespace MyExt;
-
-							class Test {
-								public fn test(var a, array b, int b) -> boolean
-								{
-									return true;
-								}								
-							}
-						```
-					</script>
-				</section>	
-
-				<section data-markdown>
-					<script type="text/template">
-                        Объявление
-
-						```zep
-							// Динамическая Zval?
-							var a = 1;
-
-							// HastTable
-							var a = 1;
-
-							// Статическая
-							int a;
-							float b;
-						```
-					</script>
-				</section>
-
-
-				<section data-markdown>
-					<script type="text/template">
-						Установка значений
-
-						<p>
-							осуществляется через оператор let
-						</p>
-
-						```zep
-							let expr = expr или scalar value;
-						```
-
-						```zep
-							let a = [1, 2, 3, 4, 5];
-
-							let b = true;
-
-							let c = new Object();
-						```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						Fetching
-
-						Было 
-
-						```php
-							<?php
-
-							$a = ["test" => 1];
-
-							if (isset($a["test"])) {
-								return $a["test"];
-							}
-						```
-
-						Стало
-
-						```zep
-							array a = ["test" => 1];
-
-							if fetch a, a["test"] {
-								return a;
-							}
-						```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						For with range
-
-						```zep
-							for n in [1..100] {
-
-							}
-						```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Built-in
-
-						Встроенные методы для всех типов.
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Built-in int
-
-						```
-							var a = -1;
-							var_dump(a->abs()); // int(1)
-						```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						Built-in array map
-
-						```zep
-						[4, 8, 12, 32, 5]->map(
-							function(int! x) {
-								return x * x;
-							}
-						)
-						```
-					</script>
-				</section>
-
-
-				<section data-markdown>
-					<script type="text/template">
-						Closures short syntax
-
-						```zep
-						[4, 8, 12, 32, 5]->map(x => x * x);
-						```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-					# Оптимизации
-
-					+ FuntionCall - Optimizers
-					+ Constant folding
-					+ SkipVariantInit
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						
-					</script>
-				</section>
-				
-				<section data-markdown>
-					<script type="text/template">
-					Constant folding
-
-					```zep
-						int a = 1;
-						let a = pow(1, 10000);
-
-						return a;
-					```
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Zephir Runtime
-
-						Zephir Runtime - это JIT компилятор встроенный в рассширение.
-					</script>
-				</section>
-
-
-				<section data-markdown>
-					<script type="text/template">
-					func.zep
-
-					```zep
-						fn myFucntion(var a)
-						{
-							return 1;
-						}
-					```
-
-					index.php
-
-					```zep
-						include_once 'func.zep';
-
-						$result = myFucntion(1);
-						var_dump($result);
-					```
-					</script>
-				</section>
-
-				<section>
-					<h2>Memory Manager</h2>
-					<ul>
-						<li>Zephir Memory Manager # Zend MM</li>
-					</ul>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						# Будущее Zephir
-
-						+ Больше оптимизаций
-						+ Переработка архитектуры на раздельные компоненты
-						+ Больше бекендов (PHP, Hack, PHP-CPP)
-						+ Развития Zephir Runtime
-						+ Возможно попробуем реализовать ZephirVM
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						# Phalcon 2
-
-						+ 99.99% Совместимый фреймворк
-						+ Переписан на Zephir
-						+ Улучшенная кодовая база
-						+ Улучшеные тесты
-					</script>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						# Производительность
-
-						@todo
-
-						| Тип приложения                   | min  | avg  | max  |
-						|----------------------------------|------|------|------|
-						| Phalcon 2 + Phalcon ORM          | 200  | 200  | 200  |
-						| Phalcon 2 + Doctrine 2           | 270  | 324  | 340  |
-						| Daemonize Phalcon 2 + Doctrine 2 | 1000 | 1000 | 2000 |
-					</script>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>The End</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				backgroundTransition: 'concave',
-				parallaxBackgroundImage: 'bg.png',
-				parallaxBackgroundSize: '100% 100% cover no-repeate',
-
-				width: 1600,
-				height: 1080,
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
+				</li>
+				<br/>
+			</ul>
+		</section>
+
+		<section>
+			<h2>А что же для Zend Engine?</h2>
+		</section>
+
+		<section>
+			<h2>Zephir</h2>
+
+			<p>Zephir - Ze(nd Engine) Ph(p) I(nt)r(mediate)</p>
+
+			<p>Zephir — это высокоуровневый язык программирования с открытым исходным кодом для быстрого и простого
+				создания PHP расширений.</p>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Как изнутри?
+
+				C Parser (json) -> Zephir Core PHP
+
+				Precompile - ClassDefintion -> Statements -> Expr
+			</script>
+		</section>
+
+		<section>
+			<h2>Особенности</h2>
+			<ul>
+				<li>dynamic/static typing</li>
+				<li>Memory safety</li>
+				<li>Ahead-of-time (AOT) compiler to provide predictable performance</li>
+				<li>Restricted procedural programming, promoting OOP</li>
+				<li>Reduced execution overhead compared with full compilation</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Самые видимые различия после PHP</h2>
+			<ul>
+				<li>Ура больше нет <?php</li>
+				<li>Прощай $</li>
+				<li>Переменная должна быть обьявлена перед использованием</li>
+			</ul>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				#### Сторогая и динамическая типизация
+
+				```
+				namespace MyExt;
+
+				class Test {
+					public fn test(var a, array b, int b) -> boolean
+					{
+						return true;
+					}
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				### Объявление
+
+				```zep
+				// Динамическая Zval?
+				var a = 1;
+
+				// HastTable
+				var a = 1;
+
+				// Статическая
+				int a;
+				float b;
+				```
+			</script>
+		</section>
+
+
+		<section data-markdown>
+			<script type="text/template">
+				Установка значений
+
+				<p>
+					осуществляется через оператор let
+				</p>
+
+				```zep
+				let expr = expr или scalar value;
+				```
+
+				```zep
+				let a = [1, 2, 3, 4, 5];
+
+				let b = true;
+
+				let c = new Object();
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				Fetching
+
+				Было
+
+				```php
+				<?php
+
+				$a = ["test" => 1];
+
+				if (isset($a["test"])) {
+				return $a["test"];
+				}
+				```
+
+				Стало
+
+				```zep
+				array a = ["test" => 1];
+
+				if fetch a, a["test"] {
+					return a;
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				For with range
+
+				```zep
+				for n in [1..100] {
+
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Built-in
+
+				Встроенные методы для всех типов.
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Built-in int
+
+				```
+				var a = -1;
+				var_dump(a->abs()); // int(1)
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				Built-in array map
+
+				```zep
+				[4, 8, 12, 32, 5]->map(
+					function(int! x) {
+						return x * x;
+					}
+				)
+				```
+			</script>
+		</section>
+
+
+		<section data-markdown>
+			<script type="text/template">
+				Closures short syntax
+
+				```zep
+				[4, 8, 12, 32, 5]->map(x => x * x);
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Оптимизации
+
+				+ FuntionCall - Optimizers
+				+ Constant folding
+				+ SkipVariantInit
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				Constant folding
+
+				```zep
+				int a = 1;
+				let a = pow(1, 10000);
+
+				return a;
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Zephir Runtime
+
+				Zephir Runtime - это JIT компилятор встроенный в рассширение.
+			</script>
+		</section>
+
+
+		<section data-markdown>
+			<script type="text/template">
+				func.zep
+
+				```zep
+				fn myFucntion(var a) {
+					return 1;
+				}
+				```
+
+				index.php
+
+				```zep
+				include_once 'func.zep';
+
+				$result = myFucntion(1);
+				var_dump($result);
+				```
+			</script>
+		</section>
+
+		<section>
+			<h2>Memory Manager</h2>
+			<ul>
+				<li>Zephir Memory Manager # Zend MM</li>
+			</ul>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Будущее Zephir
+
+				+ Больше оптимизаций
+				+ Переработка архитектуры на раздельные компоненты
+				+ Больше бекендов (PHP, Hack, PHP-CPP)
+				+ Развития Zephir Runtime
+				+ Возможно попробуем реализовать ZephirVM
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Phalcon 2
+
+				+ 99.99% Совместимый фреймворк
+				+ Переписан на Zephir
+				+ Улучшенная кодовая база
+				+ Улучшеные тесты
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Производительность
+
+				@todo
+
+				| Тип приложения                   | min  | avg  | max  |
+				|----------------------------------|------|------|------|
+				| Phalcon 2 + Phalcon ORM          | 200  | 200  | 200  |
+				| Phalcon 2 + Doctrine 2           | 270  | 324  | 340  |
+				| Daemonize Phalcon 2 + Doctrine 2 | 1000 | 1000 | 2000 |
+			</script>
+		</section>
+
+		<section style="text-align: left;">
+			<h1>The End</h1>
+
+			<p>
+				- <a href="http://slides.com">Try the online editor</a> <br>
+				- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+			</p>
+		</section>
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		backgroundTransition: 'concave',
+		parallaxBackgroundImage: 'bg.png',
+		parallaxBackgroundSize: '100% 100% cover no-repeate',
+
+		width: 1600,
+		height: 1080,
+
+		// Optional reveal.js plugins
+		dependencies: [
+			{
+				src: 'lib/js/classList.js', condition: function () {
+				return !document.body.classList;
+			}
+			},
+			{
+				src: 'plugin/markdown/marked.js', condition: function () {
+				return !!document.querySelector('[data-markdown]');
+			}
+			},
+			{
+				src: 'plugin/markdown/markdown.js', condition: function () {
+				return !!document.querySelector('[data-markdown]');
+			}
+			},
+			{
+				src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+				return !!document.querySelector('pre code');
+			}, callback: function () {
+				hljs.initHighlightingOnLoad();
+			}
+			},
+			{src: 'plugin/zoom-js/zoom.js', async: true},
+			{src: 'plugin/notes/notes.js', async: true}
+		]
+	});
+
+</script>
+
+</body>
 </html>

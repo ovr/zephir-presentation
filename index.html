@@ -496,19 +496,23 @@
 
 		<section data-markdown>
 			<script type="text/template">
-				## Числа Фибоначчи
+				## Числа Фибоначчи (PHP)
 
-				```c++
-				inline int test_bench_fibonacci(int n) {
-					if (n >= 2) {
-						return test_bench_fibonacci(n - 1) + test_bench_fibonacci(n - 2);
+				```php
+				<?php
+
+				namespace Test;
+
+				function fibonacci($n) {
+					if ($n >= 2) {
+						return fibonacci($n - 1) + fibonacci($n - 2);
 					}
 
-					return n;
+					return $n;
 				}
-				```
 
-				Zephir time: 0.0059828758239746
+				var_dump(fibonacci(30));
+				```
 
 				PHP time: 22.278899908066
 			</script>
@@ -516,9 +520,87 @@
 
 		<section data-markdown>
 			<script type="text/template">
-				## SkipVariantInit
+				## Числа Фибоначчи (Zephir с Си функцией)
 
-				@todo
+				```php
+				namespace Test;
+
+				%{
+					static inline int test_bench_fibonacci(int n) {
+						if (n >= 2) {
+							return test_bench_fibonacci(n - 1) + test_bench_fibonacci(n - 2);
+						}
+
+						return n;
+					}
+				}%
+
+				class Fibonacci {
+					public function calculate(int n) {
+						int result = 0;
+
+						%{
+							result = test_bench_fibonacci(n);
+						}%
+
+						return result;
+					}
+
+					public function calculateNonOptimise(int n) -> int
+					{
+						if n >= 2 {
+							return this->calculateNonOptimise(n - 1) + $this->calculateNonOptimise(n - 2);
+						}
+
+						return n;
+					}
+				}
+				```
+
+				Zephir time: 0.0059828758239746
+
+				Zephir without C time: 23.107372999191
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## SkipVariantInit (if-else-statement)
+
+				```
+				class Test {
+					public fn test() {
+						if {expr} {
+							var a = 1;
+						} else {
+							var a = 1;
+						}
+					}
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## SkipVariantGet (еще в работе)
+
+				```
+				class Test {
+					property prop1 = 1;
+
+					public fn test() {
+						var a, b, c, d;
+
+						let a = this->prop,
+							b = this->prop,
+							c = this->prop,
+							d = this->prop;
+
+						//....
+					}
+				}
+				```
 			</script>
 		</section>
 
@@ -531,9 +613,19 @@
 				class Test {
 					const TEST1 = 1;
 
-					public fn test1()
+					public fn getTEST1()
 					{
-						return self::TEST1;
+						return self::TEST1; //Константу можно подставить во время компиляции
+					}
+
+					public fn getCLASS()
+					{
+						return __CLASS__; //Знаем
+					}
+
+					public fn getPHPVersion()
+					{
+						return PHP_VERSION; //Возьмем runtime
 					}
 				}
 				```
@@ -570,12 +662,12 @@
 			</script>
 		</section>
 
-		<section>
-			<h2>Memory Manager</h2>
-			<ul>
-				<li>Zephir Memory Manager # Zend MM</li>
-			</ul>
-		</section>
+		<!--<section>-->
+			<!--<h2>Memory Manager</h2>-->
+			<!--<ul>-->
+				<!--<li>Zephir Memory Manager # Zend MM</li>-->
+			<!--</ul>-->
+		<!--</section>-->
 
 		<section data-markdown>
 			<script type="text/template">
@@ -600,17 +692,69 @@
 			</script>
 		</section>
 
-		<section data-markdown>
-			<script type="text/template">
-				# Производительность
+		<section>
+			<h2>Производительность реального приложения</h2>
 
-				@todo
-
-				| Тип приложения                   | min  | avg  | max  |
-				|----------------------------------|------|------|------|
-				| Phalcon 2 + Phalcon ORM          | 200  | 200  | 200  |
-				| Phalcon 2 + Doctrine 2           | 270  | 324  | 340  |
-				| Daemonize Phalcon 2 + Doctrine 2 | 1000 | 1000 | 2000 |
+			<div id="perfomance-bench-app" class="bench-graph"></div>
+			<script>
+				$(function () {
+					$('#perfomance-bench-app').highcharts({
+						chart: {
+							type: 'column'
+						},
+						xAxis: {
+							type: 'category',
+							labels: {
+								rotation: -45,
+								style: {
+									fontSize: '18px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						},
+						yAxis: {
+							min: 0,
+							labels: {
+								style: {
+									fontSize: '18px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							},
+							title: {
+								text: 'RPM'
+							}
+						},
+						legend: {
+							enabled: false
+						},
+						tooltip: {
+							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
+						},
+						title: {
+							text: null
+						},
+						series: [{
+							name: 'Framework',
+							data: [
+								['Phalcon 2 + Phalcon ORM', 450],
+								['Phalcon 2 + Doctrine 2 ORM', 270],
+								['Daemonize Phalcon 2 + Doctrine 2', 1600]
+							],
+							dataLabels: {
+								enabled: true,
+								rotation: -90,
+								color: '#FFFFFF',
+								align: 'right',
+								format: '{point.y:.1f}', // one decimal
+								y: 10, // 10 pixels down from the top
+								style: {
+									fontSize: '13px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						}]
+					});
+				});
 			</script>
 		</section>
 

@@ -496,7 +496,29 @@
 
 		<section data-markdown>
 			<script type="text/template">
+				## Числа Фибоначчи
+
+				```c++
+				inline int test_bench_fibonacci(int n) {
+					if (n >= 2) {
+						return test_bench_fibonacci(n - 1) + test_bench_fibonacci(n - 2);
+					}
+
+					return n;
+				}
+				```
+
+				Zephir time: 0.0059828758239746
+
+				PHP time: 22.278899908066
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
 				## SkipVariantInit
+
+				@todo
 			</script>
 		</section>
 

@@ -140,6 +140,9 @@
 						tooltip: {
 							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
 						},
+						title: {
+							text: null
+						},
 						series: [{
 							name: 'Framework',
 							data: [
@@ -181,6 +184,9 @@
 					$('#perfomance-bench-micro').highcharts({
 						chart: {
 							type: 'column'
+						},
+						title: {
+							text: null
 						},
 						xAxis: {
 							type: 'category',

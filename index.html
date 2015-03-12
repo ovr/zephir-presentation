@@ -98,13 +98,14 @@
 		<!--	</p>-->
 		<!--</section>-->
 
-		<section>
-			<h2>Что внутри</h2>
+		<section data-markdown>
+			<script type="text/template">
+				## Что внутри?
 
-			<p>
-				Си-код
-				Работа с Zend Engine
-			</p>
+				+ Си-код
+				+ Работа с Zend Engine
+				+ Парсер для аннотаций и PQL (Phalcon Query Language)
+			</script>
 		</section>
 
 		<section>
@@ -164,6 +165,15 @@
 		</section>
 
 		<section>
+			<h2>Самые видимые различия после PHP</h2>
+			<ul>
+				<li>Ура больше нет <?php</li>
+				<li>Прощай $</li>
+				<li>Переменная должна быть обьявлена перед использованием</li>
+			</ul>
+		</section>
+
+		<section>
 			<h2>Особенности</h2>
 			<ul>
 				<li>dynamic/static typing</li>
@@ -171,15 +181,6 @@
 				<li>Ahead-of-time (AOT) compiler to provide predictable performance</li>
 				<li>Restricted procedural programming, promoting OOP</li>
 				<li>Reduced execution overhead compared with full compilation</li>
-			</ul>
-		</section>
-
-		<section>
-			<h2>Самые видимые различия после PHP</h2>
-			<ul>
-				<li>Ура больше нет <?php</li>
-				<li>Прощай $</li>
-				<li>Переменная должна быть обьявлена перед использованием</li>
 			</ul>
 		</section>
 
@@ -334,6 +335,11 @@
 				+ SkipVariantInit
 			</script>
 		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Вызов функции в PHP явно не торт
+		</script>
 
 		<section data-markdown>
 			<script type="text/template">

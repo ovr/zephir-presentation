@@ -477,6 +477,7 @@
 				+ FuntionCall - Optimizers
 				+ Constant folding
 				+ SkipVariantInit
+				+ Runtime function's call cache
 			</script>
 		</section>
 
@@ -495,13 +496,24 @@
 
 		<section data-markdown>
 			<script type="text/template">
-				Constant folding
+				## SkipVariantInit
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Constant folding
+				### Расскрытие статических мест
 
 				```zep
-				int a = 1;
-				let a = pow(1, 10000);
+				class Test {
+					const TEST1 = 1;
 
-				return a;
+					public fn test1()
+					{
+						return self::TEST1;
+					}
+				}
 				```
 			</script>
 		</section>

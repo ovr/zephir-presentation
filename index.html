@@ -26,6 +26,13 @@
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/highcharts/highcharts.js"></script>
+	<script src="bower_components/highcharts/modules/exporting.js"></script>
+
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -102,9 +109,124 @@
 		<section>
 			<h2>Производительность</h2>
 
-			<p>
-				@todo новую
-			</p>
+			@todo
+			<div id="perfomance-bench-full" class="bench-graph"></div>
+
+			<script>
+				$(function () {
+					$('#perfomance-bench-full').highcharts({
+						chart: {
+							type: 'column'
+						},
+						xAxis: {
+							type: 'category',
+							labels: {
+								rotation: -45,
+								style: {
+									fontSize: '13px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						},
+						yAxis: {
+							min: 0,
+							title: {
+								text: 'RPM'
+							}
+						},
+						legend: {
+							enabled: false
+						},
+						tooltip: {
+							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
+						},
+						series: [{
+							name: 'Framework',
+							data: [
+								['Phalcon 1', 16000],
+								['Zend framework 1', 4000],
+								['Zend framework 2', 4000],
+								['Symfony 1', 4000],
+								['Symfony 2', 4000],
+								['CodeIgniter 2.1', 4000],
+								['Fuel 1.2.1', 4000],
+								['Laravel 3.2.5', 4000],
+							],
+							dataLabels: {
+								enabled: true,
+								rotation: -90,
+								color: '#FFFFFF',
+								align: 'right',
+								format: '{point.y:.1f}', // one decimal
+								y: 10, // 10 pixels down from the top
+								style: {
+									fontSize: '13px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						}]
+					});
+				});
+			</script>
+		</section>
+
+		<section>
+			<h2>Производительность (micro)</h2>
+
+			@todo вставить коректные результаты
+
+			<div id="perfomance-bench-micro" class="bench-graph"></div>
+			<script>
+				$(function () {
+					$('#perfomance-bench-micro').highcharts({
+						chart: {
+							type: 'column'
+						},
+						xAxis: {
+							type: 'category',
+							labels: {
+								rotation: -45,
+								style: {
+									fontSize: '13px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						},
+						yAxis: {
+							min: 0,
+							title: {
+								text: 'RPM'
+							}
+						},
+						legend: {
+							enabled: false
+						},
+						tooltip: {
+							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
+						},
+						series: [{
+							name: 'Framework',
+							data: [
+								['Phalcon Micro', 16000],
+								['Slim Framework', 4000],
+								['Silex', 4000]
+							],
+							dataLabels: {
+								enabled: true,
+								rotation: -90,
+								color: '#FFFFFF',
+								align: 'right',
+								format: '{point.y:.1f}', // one decimal
+								y: 10, // 10 pixels down from the top
+								style: {
+									fontSize: '13px',
+									fontFamily: 'Verdana, sans-serif'
+								}
+							}
+						}]
+					});
+				});
+			</script>
 		</section>
 
 		<!--<section>-->
@@ -455,9 +577,11 @@
 	</div>
 </div>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
-
+<style>
+	.bench-graph {
+		min-width: 85%; height: 600px; margin: 0 auto
+	}
+</style>
 <script>
 	// https://github.com/hakimel/reveal.js#configuration
 	Reveal.initialize({

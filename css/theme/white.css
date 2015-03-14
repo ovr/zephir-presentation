@@ -139,9 +139,9 @@ body {
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 20px;
   overflow: auto;
-  max-height: 800px;
+  max-height: 1000px;
   word-wrap: normal;
   background: #3F3F3F;
   color: #DCDCDC; }

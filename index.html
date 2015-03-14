@@ -451,17 +451,18 @@
 				$a = ["test" => 1];
 
 				if (isset($a["test"])) {
-				return $a["test"];
+					return $a["test"];
 				}
 				```
 
 				Стало
 
 				```zep
-				array a = ["test" => 1];
+				var b;
+				array a = ["test" : 1];
 
-				if fetch a, a["test"] {
-					return a;
+				if fetch b, a["test"] {
+					return b;
 				}
 				```
 			</script>

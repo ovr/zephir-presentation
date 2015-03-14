@@ -41,12 +41,14 @@
 <div class="reveal">
 	<div class="slides">
 		<section class="welcome-slide">
-			<h1>Сладкое будущее:</h1>
-			<h2>Phalcon и Zephir</h2>
+			<div class="text">
+				<h1>Сладкое будущее:</h1>
+				<h2>Phalcon и Zephir</h2>
 
-			<div class="bottom">
-				<small><a href="http://dmtry.me/about">Dmitry Patsura</a> / <a href="https://github.com/ovr">@ovr</a>
-				</small>
+				<div class="bottom">
+					<small><a href="http://dmtry.me/about">Dmitry Patsura</a> / <a href="https://github.com/ovr">@ovr</a>
+					</small>
+				</div>
 			</div>
 		</section>
 
@@ -836,6 +838,13 @@
 	/*}*/
 	.backgrounds .slide-background.welcome-slide {
 		background-image: url(bg1.jpg);
+	}
+	.welcome-slide > div.text {
+		top: 0%;
+		text-align: left;
+		position: absolute;
+		margin-top: -10%;
+		left: 30%;
 	}
 </style>
 <script>

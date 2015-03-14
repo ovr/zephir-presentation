@@ -40,15 +40,14 @@
 <body>
 <div class="reveal">
 	<div class="slides">
-		<section>
+		<section class="welcome-slide">
 			<h1>Сладкое будущее:</h1>
-
 			<h2>Phalcon и Zephir</h2>
 
-			<p>
+			<div class="bottom">
 				<small><a href="http://dmtry.me/about">Dmitry Patsura</a> / <a href="https://github.com/ovr">@ovr</a>
 				</small>
-			</p>
+			</div>
 		</section>
 
 
@@ -832,6 +831,12 @@
 	.zep {
 		color: #269abc;
 	}
+	/*.backgrounds {*/
+		/*background-image: url(bg.png);*/
+	/*}*/
+	.backgrounds .slide-background.welcome-slide {
+		background-image: url(bg1.jpg);
+	}
 </style>
 <script>
 	// https://github.com/hakimel/reveal.js#configuration
@@ -841,9 +846,8 @@
 		history: true,
 		center: true,
 
-		transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-		backgroundTransition: 'concave',
+		transition: 'none', // none/fade/slide/convex/concave/zoom
+		backgroundTransition: 'none',
 		parallaxBackgroundImage: 'bg.png',
 
 		width: 1600,

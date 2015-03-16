@@ -482,19 +482,33 @@
 
 		<section data-markdown>
 			<script type="text/template">
-				## Built-in
+				## Встроенные методы для всех типов.
+				### (Built-in methods)
 
-				Встроенные методы для всех типов.
+				+ Array
+				+ Char
+				+ Double
+				+ Int
+				+ String
 			</script>
 		</section>
 
 		<section data-markdown>
 			<script type="text/template">
-				## Built-in int
+				## Built-in for int
 
 				```
-				var a = -1;
+				int a = -1;
+
 				var_dump(a->abs()); // int(1)
+				var_dump(a->tobinary()); // int(1)
+				var_dump(a->tohex()); // int(1)
+				var_dump(a->tooctal());
+				var_dump(a->pow());
+				var_dump(a->sqrt());
+				var_dump(a->exp());
+				var_dump(a->sin());
+				var_dump(a->cos());
 				```
 			</script>
 		</section>

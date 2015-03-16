@@ -633,6 +633,48 @@
 
 		<section data-markdown>
 			<script type="text/template">
+				```php
+				namespace Test\Math;
+
+				public function calculateMath(int n) {
+					int i;
+
+					for i in range(1, count) {
+						abs(i);
+					}
+
+					for i in range(1, count) {
+						acos(i);
+					}
+
+					for i in range(1, count) {
+						asin(i);
+					}
+
+					for i in range(1, count) {
+						atan(i);
+					}
+
+					for i in range(1, count) {
+						floor(i);
+					}
+
+					for i in range(1, count) {
+						exp(i);
+					}
+				}
+
+				Test\Math\calculateMath(140000);
+				```
+
+				#### Zephir time: 0.08000
+				#### PHP: 10.0
+				#### Zephir without Optimizers (function call): 23.000
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
 				## SkipVariantInit (if-else-statement)
 
 				```

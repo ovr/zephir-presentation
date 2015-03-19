@@ -36,6 +36,41 @@
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
+
+	<script>
+		$(function() {
+			Highcharts.setOptions({
+				chart: {
+					type: 'column'
+				},
+				xAxis: {
+					type: 'category',
+					labels: {
+						rotation: -45,
+						style: {
+							fontSize: '18px',
+							fontFamily: 'Verdana, sans-serif'
+						}
+					}
+				},
+				yAxis: {
+					min: 0,
+					labels: {
+						style: {
+							fontSize: '18px',
+							fontFamily: 'Verdana, sans-serif'
+						}
+					}
+				},
+				legend: {
+					enabled: false
+				},
+				title: {
+					text: null
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 <div class="reveal">
@@ -119,33 +154,14 @@
 			<script>
 				$(function () {
 					$('#perfomance-bench-full').highcharts({
-						chart: {
-							type: 'column'
-						},
-						xAxis: {
-							type: 'category',
-							labels: {
-								rotation: -45,
-								style: {
-									fontSize: '13px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
-						},
 						yAxis: {
 							min: 0,
 							title: {
 								text: 'RPM'
 							}
 						},
-						legend: {
-							enabled: false
-						},
 						tooltip: {
 							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
-						},
-						title: {
-							text: null
 						},
 						series: [{
 							name: 'Framework',
@@ -186,30 +202,11 @@
 			<script>
 				$(function () {
 					$('#perfomance-bench-micro').highcharts({
-						chart: {
-							type: 'column'
-						},
-						title: {
-							text: null
-						},
-						xAxis: {
-							type: 'category',
-							labels: {
-								rotation: -45,
-								style: {
-									fontSize: '13px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
-						},
 						yAxis: {
 							min: 0,
 							title: {
 								text: 'RPM'
 							}
-						},
-						legend: {
-							enabled: false
 						},
 						tooltip: {
 							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
@@ -819,39 +816,13 @@
 			<script>
 				$(function () {
 					$('#perfomance-bench-app').highcharts({
-						chart: {
-							type: 'column'
-						},
-						xAxis: {
-							type: 'category',
-							labels: {
-								rotation: -45,
-								style: {
-									fontSize: '18px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
-						},
 						yAxis: {
-							min: 0,
-							labels: {
-								style: {
-									fontSize: '18px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							},
 							title: {
 								text: 'RPM'
 							}
 						},
-						legend: {
-							enabled: false
-						},
 						tooltip: {
 							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
-						},
-						title: {
-							text: null
 						},
 						series: [{
 							name: 'Framework',

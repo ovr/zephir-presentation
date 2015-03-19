@@ -333,7 +333,7 @@
 			+ Прощай $
 			+ Переменная должна быть обьявлена перед использованием
 			+ Статическая\Динамическая типизация
-			+ Компеляция Ahead-of-time (AOT)
+			+ Компиляция Ahead-of-time (AOT)
 			+ Безопасная работа с памятью (Memory safety)
 			</script>
 		</section>
@@ -401,19 +401,25 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
-				### Объявление
+				### Статическая\Динамическая типизация
+
+				@todo
 
 				```php
 				// Динамическая Zval?
 				var a = 1;
 
-				// array
+				// Массив
 				var b = [1, 2, 3];
+				array b = [1, 2, 3];
 
 				// Статическая
 				int a = -1;
 				uint a = 1;
-				float b;
+				float pi = 3.14;
+				bool a = true;
+				string a = "Test string";
+				char a = 'A';
 				```
 			</script>
 		</section>

@@ -78,6 +78,8 @@
 <body>
 <div class="reveal">
 	<div class="slides">
+		<pre style="display: none;"><code></code></pre>
+
 		<section class="welcome-slide" data-background="bg1.jpg">
 			<div class="text">
 				<h1>Сладкое будущее:</h1>
@@ -319,7 +321,8 @@
 			<script type="text/template">
 				## Как изнутри?
 
-				@todo
+				@todo Красивую схему
+
 				C Parser (json) -> Zephir Core PHP
 				Precompile - ClassDefintion -> Statements -> Expr
 			</script>
@@ -337,8 +340,6 @@
 			+ Безопасная работа с памятью (Memory safety)
 			</script>
 		</section>
-
-		<pre style="display: none;"><code></code></pre>
 
 		<section data-markdown>
 			<script type="text/template">
@@ -406,7 +407,7 @@ class Application
 				@todo
 
 				```php
-				// Динамическая Zval?
+				// Динамическая Примитив\Zval\HashTable
 				var a = 1;
 
 				// Массив
@@ -435,9 +436,7 @@ class Application
 
 				```zep
 				let expr = expr или scalar value;
-				```
 
-				```zep
 				let a = [1, 2, 3, 4, 5];
 
 				let b = true;
@@ -446,6 +445,37 @@ class Application
 				```
 			</script>
 		</section>
+
+
+		<section data-markdown>
+			<script type="text/template">
+				## Установка возвращаемого типа
+
+				```zep
+				namespace Test;
+
+				class Test {
+					public function testReturnArray() -> int
+					{
+						return 1;
+					}
+
+					public function testReturnArray() -> array
+					{
+						return [1, 2, 3, 4, 5];
+					}
+
+					/**
+				     * Но устанавливать возвращаемый тип не обязательно
+				     */
+					public function testWithoutReturn()
+					{
+
+					}
+				}
+				```
+			</script>
+		</section>s
 
 		<section data-markdown>
 			<script type="text/template">
@@ -609,7 +639,7 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
-				Built-in array map
+				## Built-in for array
 
 				```zep
 				[4, 8, 12, 32, 5]->map(
@@ -621,13 +651,92 @@ class Application
 			</script>
 		</section>
 
-
 		<section data-markdown>
 			<script type="text/template">
-				Closures short syntax
+				## Closures short syntax
 
 				```zep
 				[4, 8, 12, 32, 5]->map(x => x * x);
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Анонимные переменые
+
+				```zep
+				namespace Test;
+
+				function anonymouseKeyFor(var data)
+				{
+					for _ in data {
+						echo "hello";
+					}
+				}
+
+				function anonymouseValueWalk(var data)
+				{
+					array data = [1, 2, 3, 4, 5];
+
+					data->walk(
+						function(_, int key) { echo key; }
+					);
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+			# И другие возможности ;)
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Статический анализ
+
+				```zep
+				namespace Test;
+
+				function testUnusedVal()
+				{
+					var v;
+
+					for v in data {
+						echo "hello";
+					}
+				}
+				```
+
+				Но получим Warning
+
+				```
+				Warning: Variable "v" assigned but not used in Test::testUnusedVal in
+				/Users/ovr/projects/zephir/functional.zep on 117 [unused-variable]
+
+				for v in data {
+				----------------^
+				```
+
+				А как исправить ошибку?
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## А ты уже забыл про анонимные переменные?
+
+				```zep
+				namespace Test;
+
+				function testUnusedVal()
+				{
+					for _ in data {
+						echo "hello";
+					}
+				}
 				```
 			</script>
 		</section>
@@ -842,7 +951,6 @@ class Application
 
 				+ Генерация автокомплита для IDE (IDE stubs)
 				+ Генерация документации (аналогично PHPDocumentor)
-				+ Статический анализ (AOT)
 			</script>
 		</section>
 

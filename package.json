@@ -1,0 +1,23 @@
+{
+  "name": "zephir-presentation",
+  "version": "1.0.0",
+  "description": "Phalcon и Zephir",
+  "main": "index.js",
+  "dependencies": {
+    "reveal.js": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ovr/zephir-presentation.git"
+  },
+  "author": "Dmitry Patsura <talk@dmtry.me>",
+  "license": "Creative Commons Attribution 4.0 International.",
+  "bugs": {
+    "url": "https://github.com/ovr/zephir-presentation/issues"
+  },
+  "homepage": "https://github.com/ovr/zephir-presentation"
+}

@@ -75,7 +75,7 @@
 <body>
 <div class="reveal">
 	<div class="slides">
-		<section class="welcome-slide">
+		<section class="welcome-slide" data-background="bg1.jpg">
 			<div class="text">
 				<h1>Сладкое будущее:</h1>
 				<h2>Phalcon и Zephir</h2>
@@ -88,7 +88,7 @@
 		</section>
 
 
-		<section>
+		<section data-background="bg.png">
 			<h2>В ближайшие 30 минут</h2>
 			<ul>
 				<li>Фреймворки на Си для PHP</li>
@@ -866,7 +866,7 @@
 	}
 	.backgrounds {
 		background-repeat: no-repeat;
-		background-size: cover;
+		/*background-size: cover;*/
 	}
 	.zep {
 		color: #269abc;
@@ -874,11 +874,11 @@
 	/*.backgrounds {*/
 		/*background-image: url(bg.png);*/
 	/*}*/
-	.backgrounds .slide-background.welcome-slide {
-		background-image: url(bg1.jpg);
-	}
+	/*.backgrounds .slide-background.welcome-slide {*/
+		/*background-image: url(bg1.jpg);*/
+	/*}*/
 	.welcome-slide > div.text {
-		top: 0%;
+		top: 0;
 		text-align: left;
 		position: absolute;
 		margin-top: -10%;
@@ -893,11 +893,12 @@
 		history: true,
 		center: true,
 
-		transition: 'none', // none/fade/slide/convex/concave/zoom
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
 		backgroundTransition: 'none',
 		parallaxBackgroundImage: 'bg.png',
+		parallaxBackgroundSize: '1920px 1080px',
 
-		width: 1600,
+		width: 1920,
 		height: 1080,
 
 		// Optional reveal.js plugins

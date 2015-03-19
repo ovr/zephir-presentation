@@ -67,6 +67,9 @@
 				},
 				title: {
 					text: null
+				},
+				credits: {
+					enabled: false
 				}
 			});
 		});
@@ -87,8 +90,7 @@
 			</div>
 		</section>
 
-
-		<section data-background="bg.png">
+		<section>
 			<h2>В ближайшие 30 минут</h2>
 			<ul>
 				<li>Фреймворки на Си для PHP</li>
@@ -868,7 +870,10 @@ class Application
 	}
 	.backgrounds {
 		background-repeat: no-repeat;
-		/*background-size: cover;*/
+		/*background-size: cover !important;*/
+		/*background-position: center center !important;*/
+		/*width: 100% !important;*/
+		/*height: 100% !important;*/
 	}
 	.zep {
 		color: #269abc;
@@ -895,8 +900,8 @@ class Application
 		history: true,
 		center: true,
 
-		transition: 'slide', // none/fade/slide/convex/concave/zoom
-		backgroundTransition: 'fade',
+		transition: 'none', // none/fade/slide/convex/concave/zoom
+		backgroundTransition: 'none',
 		parallaxBackgroundImage: 'bg.png',
 		parallaxBackgroundSize: '1920px 1080px',
 
@@ -921,7 +926,7 @@ class Application
 			}
 			},
 			{
-				src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+				src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, condition: function () {
 				return !!document.querySelector('pre code');
 			}, callback: function () {
 				hljs.initHighlightingOnLoad();

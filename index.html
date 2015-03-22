@@ -503,19 +503,24 @@ class Application
 				$a = ["test" => 1];
 
 				if (isset($a["test"])) {
-					return $a["test"];
+					$value = $a["test"];
+					// ...
 				}
+
+				return $value;
 				```
 
 				Стало
 
-				```zep
-				var b;
+				```php
+				var value;
 				array a = ["test" : 1];
 
 				if fetch b, a["test"] {
-					return b;
+					//...
 				}
+
+				return value;
 				```
 			</script>
 		</section>
@@ -638,8 +643,8 @@ class Application
 				```
 				int a = -36;
 
-				a->abs()); // int(36)
-				a->tobinary()); // int(1)
+				a->abs(); // int(36)
+				a->tobinary(); // int(1)
 				a->tohex(); // int(1)
 				a->tooctal();
 				a->pow();

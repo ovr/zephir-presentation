@@ -353,16 +353,6 @@ class Application
 	protected response {get};
 
 	/**
-	 * Di Container
-	 */
-	protected di {get};
-
-	public fn __construct(var di = null)
-	{
-		let this->di = di;
-	}
-
-	/**
 	 * Handle Http Request
 	 */
 	public fn handle(<Http\Request> request, <Http\Response> response = null) -> <Http\Response>
@@ -475,7 +465,7 @@ class Application
 				}
 				```
 			</script>
-		</section>s
+		</section>
 
 		<section data-markdown>
 			<script type="text/template">

@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 	<!-- Code syntax highlighting -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="lib/css/tomorrow.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -257,10 +257,35 @@
 			</script>
 		</section>
 
-		<section>
-			<p>
-				<img src="img/2.png">
-			</p>
+		<section data-markdown class="fullscreen-code small-code">
+			<script type="text/template">
+				```php
+				PHP_METHOD(Phalcon_Mvc_Application, registerModules){
+
+					zval *modules, *merge = NULL, *registered_modules, *merged_modules = NULL;
+
+					PHALCON_MM_GROW();
+
+					if (PHALCON_IS_FALSE(merge)) {
+						phalcon_update_property_this(this_ptr, SL("_modules"), modules TSRMLS_CC);
+					} else {
+						PHALCON_OBS_VAR(registered_modules);
+						phalcon_read_property_this(&registered_modules, this_ptr, SL("_modules"), PH_NOISY TSRMLS_CC);
+
+						if (Z_TYPE_P(registered_modules) == IS_ARRAY) {
+							PHALCON_INIT_VAR(merged_modules);
+							phalcon_fast_array_merge(merged_modules, &registered_modules, &modules TSRMLS_CC);
+						} else {
+							PHALCON_CPY_WRT(merged_modules, modules);
+						}
+
+						phalcon_update_property_this(this_ptr, SL("_modules"), merged_modules TSRMLS_CC);
+					}
+
+					RETURN_THIS();
+				}
+				```
+			</script>
 		</section>
 
 		<section data-markdown>
@@ -341,21 +366,20 @@
 			</script>
 		</section>
 
-		<section data-markdown>
+		<section data-markdown class="fullscreen-code">
 			<script type="text/template">
 ```php
 namespace Owl;
 
+use Http\Request;
+use Http\Response;
+
 class Application
 {
 	protected request {get};
-
 	protected response {get};
 
-	/**
-	 * Handle Http Request
-	 */
-	public fn handle(<Http\Request> request, <Http\Response> response = null) -> <Http\Response>
+	public fn handle(<Request> request, <Response> response = null) -> <Response>
 	{
 		var matchedRoute, router;
 
@@ -363,7 +387,7 @@ class Application
 		let matchedRoute = router->matchRequest(request);
 
 		if (is_null(response)) {
-			let response = new Http\Response();
+			let response = new Response();
 		}
 
 		return response;

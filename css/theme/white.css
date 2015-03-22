@@ -128,11 +128,19 @@ body {
   width: 100%;
   margin: 20px auto;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.90em;
   font-family: monospace;
-  line-height: 1.2em;
+  line-height: 1.1em;
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.fullscreen-code.small-code code {
+    font-size: 0.75em !important;
+    line-height: 1.5em !important;
+}
+.fullscreen-code code {
+    margin: 0;
+}
 
 .reveal code {
   font-family: monospace; }
@@ -143,8 +151,9 @@ body {
   overflow: auto;
   max-height: 1000px;
   word-wrap: normal;
-  background: #3F3F3F;
-  color: #DCDCDC; }
+  /*background: #3F3F3F;*/
+  /*color: #DCDCDC;*/
+}
 
 .reveal table {
   margin: auto;

@@ -823,9 +823,9 @@ class Application
 
 				```
 				Warning: Variable "v" assigned but not used in Test::testUnusedVal in
-				/Users/ovr/projects/zephir/functional.zep on 117 [unused-variable]
+				/Users/ovr/projects/zephir/functional.zep on 5 [unused-variable]
 
-				for v in data {
+							for v in data {
 				----------------^
 				```
 
@@ -846,6 +846,35 @@ class Application
 						echo "hello";
 					}
 				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Статический анализ в ветках
+
+				```zep
+				namespace Test;
+
+				function testIfBranch(var v)
+				{
+					var z;
+
+					if !empty v {
+						let z = v;
+					}
+				}
+				```
+
+				Но получим Warning
+
+				```applescript
+				Warning: Variable "z" assigned but not used in Test::testIfBranch in
+				/Users/ovr/projects/zephir/functional.zep on 5 [unused-variable]
+
+						let z = v;
+				----------------^
 				```
 			</script>
 		</section>

@@ -929,6 +929,28 @@ class Application
 			</script>
 		</section>
 
+
+		<section data-markdown>
+			<script type="text/template">
+				## Числа Фибоначчи (Zephir с Си функцией)
+
+				```php
+				namespace Test;
+
+				function calculateNonOptimise(int n) -> int
+				{
+					if n >= 2 {
+						return this->calculateNonOptimise(n - 1) + $this->calculateNonOptimise(n - 2);
+					}
+
+					return n;
+				}
+				```
+
+				Zephir without C time: 23.107372999191
+			</script>
+		</section>
+
 		<section data-markdown>
 			<script type="text/template">
 				## Числа Фибоначчи (Zephir с Си функцией)
@@ -946,31 +968,18 @@ class Application
 					}
 				}%
 
-				class Fibonacci {
-					public function calculate(int n) {
-						int result = 0;
+				function calculate(int n) {
+					int result = 0;
 
-						%{
-							result = test_bench_fibonacci(n);
-						}%
+					%{
+						result = test_bench_fibonacci(n);
+					}%
 
-						return result;
-					}
-
-					public function calculateNonOptimise(int n) -> int
-					{
-						if n >= 2 {
-							return this->calculateNonOptimise(n - 1) + $this->calculateNonOptimise(n - 2);
-						}
-
-						return n;
-					}
+					return result;
 				}
 				```
 
 				Zephir time: 0.0059828758239746
-
-				Zephir without C time: 23.107372999191
 			</script>
 		</section>
 
@@ -979,35 +988,18 @@ class Application
 				```php
 				namespace Test\Math;
 
-				public function calculateMath(int count) {
+				function calculateMath() {
 					int i;
 
-					for i in range(1, count) {
+					for i in range(1, 140000) {
 						abs(i);
-					}
-
-					for i in range(1, count) {
 						acos(i);
-					}
-
-					for i in range(1, count) {
 						asin(i);
-					}
-
-					for i in range(1, count) {
 						atan(i);
-					}
-
-					for i in range(1, count) {
 						floor(i);
-					}
-
-					for i in range(1, count) {
 						exp(i);
 					}
 				}
-
-				Test\Math\calculateMath(140000);
 				```
 
 				#### Zephir time: 0.08000

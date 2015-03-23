@@ -46,8 +46,8 @@
 					format: '{point.y:,1f}', // one decimal
 					y: 80, // 10 pixels down from the top
 					style: {
-				fontSize: '48px',
-						fontFamily: 'Verdana, sans-serif'
+					fontSize: '48px',
+					fontFamily: 'Verdana, sans-serif'
 			}
 		};
 
@@ -189,6 +189,9 @@
 				### PHP 5.6.6 (built: Mar 20 2015 20:36:20) FPM + OPCache
 
 				### Nginx/1.6.2
+
+
+				## Тестируем через Apache benchmark (ab)
 			</script>
 		</section>
 
@@ -222,16 +225,18 @@
 				<?php
 				echo "Hello, World!";
 				```
+
+				<!--### Помним что будет сравнивать производительность относительно!-->
 			</script>
 		</section>
 
+
 		<section>
-			<h2>Производительность (RPS)</h2>
+			<h2>Производительность MVC (RPS)</h2>
 
 			Количество запросов в секунду
 
 			<div id="perfomance-bench-full" class="bench-graph"></div>
-
 			<script>
 				$(function () {
 					$('#perfomance-bench-full').highcharts({
@@ -259,12 +264,11 @@
 		</section>
 
 		<section>
-			<h2>Производительность (RPM)</h2>
+			<h2>Производительность MVC (RPM)</h2>
 
 			Количество запросов в минуту
 
 			<div id="perfomance-bench-full-rpm" class="bench-graph"></div>
-
 			<script>
 				$(function () {
 					$('#perfomance-bench-full-rpm').highcharts({
@@ -292,10 +296,9 @@
 		</section>
 
 		<section>
-			<h2>Производительность Micro (RPM)</h2>
+			<h2>Производительность Micro (RPS)</h2>
 
-			@todo вставить коректные результаты
-
+			Количество запросов в секунду
 			<div id="perfomance-bench-micro" class="bench-graph"></div>
 			<script>
 				$(function () {
@@ -323,12 +326,12 @@
 		</section>
 
 		<!--<section>-->
-		<!--	<h2>Потребление памяти</h2>-->
-		<!--	<p>-->
-		<!--		@todo новую-->
-		<!--Phalcon 2 786432 /= 0.75-->
-		<!--Zend Framework 2 /= 2.75-->
-		<!--	</p>-->
+			<!--<h2>Потребление памяти</h2>-->
+			<!--<p>-->
+				<!--@todo новую-->
+				<!--Phalcon 2 786432 /= 0.75-->
+				<!--Zend Framework 2 /= 2.75-->
+			<!--</p>-->
 		<!--</section>-->
 
 		<section data-markdown>

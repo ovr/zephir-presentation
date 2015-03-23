@@ -1170,9 +1170,23 @@ class Application
 				# Как установить на локале?
 
 
+				```bash
+				sudo apt-get install php5-dev php5-mysql gcc make re2c libpcre3-dev
+
+				git clone -b 2.0.0 https://github.com/phalcon/cphalcon.git
+				cd ext
+				sudo ./install
+				```
 			</script>
 		</section>
 
+		<section data-markdown>
+			<script type="text/template">
+				# Ну а вообще
+
+				## Ansible или Puppet
+			</script>
+		</section>
 
 		<section data-markdown>
 			<script type="text/template">
@@ -1236,19 +1250,19 @@ class Application
 						series: [{
 							name: 'Framework',
 							data: [
-								['Phalcon 2 + Phalcon ORM', 450],
-								['Phalcon 2 + Doctrine 2 ORM', 270],
-								['Daemonize Phalcon 2 + Doctrine 2', 1600]
+								['Phalcon 2 + Phalcon ORM', 650],
+								['Phalcon 2 + Doctrine 2 ORM', 270]
+//								['Daemonize Phalcon 2 + Doctrine 2', 1600]
 							],
 							dataLabels: {
 								enabled: true,
-								rotation: -90,
+								rotation: 0,
 								color: '#FFFFFF',
-								align: 'right',
+								align: 'center',
 								format: '{point.y:.1f}', // one decimal
-								y: 10, // 10 pixels down from the top
+								y: 90, // 10 pixels down from the top
 								style: {
-									fontSize: '13px',
+									fontSize: '36px',
 									fontFamily: 'Verdana, sans-serif'
 								}
 							}
@@ -1259,17 +1273,18 @@ class Application
 		</section>
 
 		<section style="text-align: left;">
-			<h1>The End</h1>
+			<h1>Спасибо за внимание :3</h1>
 
 			<p>
-				- <a href="http://slides.com">Try the online editor</a> <br>
-				- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+				<a href="http://github.com/phalcon/cphalcon">http://github.com/phalcon/cphalcon</a>
+				<br>
+				<a href="http://github.com/phalcon/zephir">http://github.com/phalcon/zephir</a>
 			</p>
 		</section>
 	</div>
 </div>
 
-<style>
+<style type="text/css">
 	.bench-graph {
 		min-width: 85%; height: 80%; margin: 0 auto
 	}

@@ -670,10 +670,9 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
+				## Пример использование диапазонов
+
 				```zep
-				/**
-				 * Пример использование диапазонов
-				 */
 				class Test {
 					public function getRange() -> array
 					{
@@ -684,29 +683,39 @@ class Application
 					{
 						return [1...100]; //Массив на 98 элементов
 					}
-
-					public function iterateVarRange()
-					{
-						var a;
-
-						for a in [1..100] {
-							echo i; // Компилятор будет решать что использовать для типа
-						}
-					}
-
-					public function iterateRange()
-					{
-						int i;
-
-						for i in [1..100] {
-							echo i;
-						}
-					}
 				}
 				```
 			</script>
 		</section>
 
+
+		<section data-markdown>
+			<script type="text/template">
+				## Пример использование диапазонов в for
+
+				```zep
+				namespace Test;
+
+				function iterateVarRange()
+				{
+					var a;
+
+					for a in [1..100] {
+						echo i; // Компилятор будет решать что использовать для типа
+					}
+				}
+
+				function iterateRange()
+				{
+					int i;
+
+					for i in [1..100] {
+						echo i;
+					}
+				}
+				```
+			</script>
+		</section>
 
 		<section data-markdown>
 			<script type="text/template">

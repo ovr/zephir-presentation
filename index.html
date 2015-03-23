@@ -38,6 +38,19 @@
 	<![endif]-->
 
 	<script>
+		dataLabels = {
+			enabled: true,
+					rotation: 0,
+					color: '#FFFFFF',
+					align: 'center',
+					format: '{point.y:,1f}', // one decimal
+					y: 80, // 10 pixels down from the top
+					style: {
+				fontSize: '48px',
+						fontFamily: 'Verdana, sans-serif'
+			}
+		};
+
 		$(function() {
 			Highcharts.setOptions({
 				chart: {
@@ -70,7 +83,10 @@
 				},
 				credits: {
 					enabled: false
-				}
+				},
+				series: [{
+					dataLabels: window.dataLabels
+				}]
 			});
 		});
 	</script>
@@ -196,6 +212,19 @@
 			</script>
 		</section>
 
+		<section data-markdown>
+			<script type="text/template">
+				## Максимум Nginx + FPM
+
+				### 9800 RPS ~ 588K RPM
+
+				```php
+				<?php
+				echo "Hello, World!";
+				```
+			</script>
+		</section>
+
 		<section>
 			<h2>Производительность (RPS)</h2>
 
@@ -222,18 +251,7 @@
 								['Zend Framework 2.3.7', 527],
 								['Yii 2.03', 823]
 							],
-							dataLabels: {
-								enabled: true,
-								rotation: 0,
-								color: '#FFFFFF',
-								align: 'center',
-								format: '{point.y:.1f}', // one decimal
-								y: 80, // 10 pixels down from the top
-								style: {
-									fontSize: '48px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
+							dataLabels: window.dataLabels
 						}]
 					});
 				});
@@ -266,18 +284,7 @@
 								['Zend Framework 2.3.7', 527*60],
 								['Yii 2.0.3', 823*60]
 							],
-							dataLabels: {
-								enabled: true,
-								rotation: 0,
-								color: '#FFFFFF',
-								align: 'center',
-								format: '{point.y:,1f}', // one decimal
-								y: 80, // 10 pixels down from the top
-								style: {
-									fontSize: '48px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
+							dataLabels: window.dataLabels
 						}]
 					});
 				});
@@ -285,7 +292,7 @@
 		</section>
 
 		<section>
-			<h2>Производительность (micro)</h2>
+			<h2>Производительность Micro (RPM)</h2>
 
 			@todo вставить коректные результаты
 
@@ -300,27 +307,15 @@
 							}
 						},
 						tooltip: {
-							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
+							pointFormat: 'Perfomance <b>{point.y:.1f} responses per second.</b>'
 						},
 						series: [{
 							name: 'Framework',
 							data: [
-								['Phalcon Micro', 16000],
-								['Slim Framework', 4000],
-								['Silex', 4000]
+								['Hello World', 9800],
+								['Phalcon Micro', 6863]
 							],
-							dataLabels: {
-								enabled: true,
-								rotation: -90,
-								color: '#FFFFFF',
-								align: 'right',
-								format: '{point.y:.1f}', // one decimal
-								y: 10, // 10 pixels down from the top
-								style: {
-									fontSize: '13px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
+							dataLabels: window.dataLabels
 						}]
 					});
 				});

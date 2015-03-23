@@ -1163,6 +1163,53 @@ class Application
 			</script>
 		</section>
 
+		<section data-markdown>
+			<script type="text/template">
+				# Как установить на локале?
+
+
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Пример контролера для REST API
+
+				```php
+				/**
+				 * @RoutePrefix("/api/users")
+				 */
+				class UsersController extends RestController
+				{
+					/**
+					 * @Get("/{id:[0-9]+}", name="get-user")
+					 */
+					public function getAction($id)
+					{
+						/** @var $user Entity|boolean */
+						$user = $em->find('User\Model\Entity', $id);
+						if (!$user) {
+							throw new Exception('User not found', 404);
+						}
+
+						return array(
+							'id' => $user->id,
+							'firstname' => $user->firstname
+						);
+					}
+				}
+				```
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				# Как разрабатывать?
+
+
+			</script>
+		</section>
+
 		<section>
 			<h2>Производительность реального приложения</h2>
 

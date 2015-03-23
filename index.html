@@ -164,6 +164,38 @@
 			</script>
 		</section>
 
+		<section data-markdown>
+			<script type="text/template">
+				# А теперь еще софт
+
+				### Linux dmtry.me 3.13.0-44-generic #73-Ubuntu SMP x86_64 GNU/Linux
+
+				### PHP 5.6.6 (built: Mar 20 2015 20:36:20) FPM + OPCache
+
+				### Nginx/1.6.2
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
+				## Без конфига opcache не верю
+
+				```
+				opcache.memory_consumption=512
+				opcache.interned_strings_buffer=16
+
+				opcache.consistency_checks=0
+				opcache.validate_timestamps=0
+				opcache.revalidate_freq=0
+
+				opcache.max_accelerated_files=8000
+				opcache.fast_shutdown=1
+				opcache.force_restart_timeout=60
+				opcache.enable_slow_optimizations=1
+				```
+			</script>
+		</section>
+
 		<section>
 			<h2>Производительность (RPS)</h2>
 

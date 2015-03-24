@@ -613,7 +613,7 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
-			## Shortcuts for getter/setter/toString
+			## Нативные getter/setter/toString
 
 			PHP
 
@@ -794,12 +794,6 @@ class Application
 					);
 				}
 				```
-			</script>
-		</section>
-
-		<section data-markdown>
-			<script type="text/template">
-			# И другие возможности ;)
 			</script>
 		</section>
 
@@ -1087,6 +1081,12 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
+				# И другие возможности ;)
+			</script>
+		</section>
+
+		<section data-markdown>
+			<script type="text/template">
 				## Минусы
 
 				+ Еще не реализованы Trait
@@ -1149,8 +1149,8 @@ class Application
 			<script type="text/template">
 				# Phalcon 2
 
-				+ 99.99% Совместимый фреймворк
 				+ Переписан на Zephir
+				+ 99.99% Совместимый фреймворк
 				+ Улучшенная кодовая база
 				+ Улучшены тесты
 			</script>
@@ -1183,7 +1183,7 @@ class Application
 			<script type="text/template">
 				## Как разрабатывать?
 
-				### Берем Vagrant +
+				### Берем виртуалку на Vagrant +
 
 				+ VirtualBox `*`
 				+ LXC (Linux Kernel Containers) `****`
@@ -1245,18 +1245,7 @@ class Application
 								['Phalcon 2 + Doctrine 2 ORM', 270]
 //								['Daemonize Phalcon 2 + Doctrine 2', 1600]
 							],
-							dataLabels: {
-								enabled: true,
-								rotation: 0,
-								color: '#FFFFFF',
-								align: 'center',
-								format: '{point.y:.1f}', // one decimal
-								y: 90, // 10 pixels down from the top
-								style: {
-									fontSize: '36px',
-									fontFamily: 'Verdana, sans-serif'
-								}
-							}
+							dataLabels: window.dataLabels
 						}]
 					});
 				});
@@ -1283,11 +1272,13 @@ class Application
 				<a href="http://github.com/phalcon/cphalcon">http://github.com/phalcon/cphalcon</a>
 				<br>
 				<a href="http://github.com/phalcon/zephir">http://github.com/phalcon/zephir</a>
+				<br>
+				<a href="http://github.com/phalcon/zephir">https://github.com/ovr/phalcon-module-skeleton</a>
 			</p>
 
-			<h2>
+			<h1 style="text-align: center;">
 				<a href="http://dmtry.me/codefest2015">http://dmtry.me/codefest2015</a>
-			</h2>
+			</h1>
 		</section>
 	</div>
 </div>

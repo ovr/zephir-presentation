@@ -486,26 +486,7 @@ class Application
 
 		<section data-markdown>
 			<script type="text/template">
-				#### Строгая и динамическая типизация
-
-				```php
-				namespace MyExt;
-
-				class Test {
-					public fn test(var a, array b, int b) -> boolean
-					{
-						return true;
-					}
-				}
-				```
-			</script>
-		</section>
-
-		<section data-markdown>
-			<script type="text/template">
-				### Статическая\Динамическая типизация
-
-				@todo
+				## Статическая\Динамическая типизация
 
 				```php
 				// Динамическая Примитив\Zval\HashTable
@@ -526,6 +507,24 @@ class Application
 			</script>
 		</section>
 
+		<section data-markdown>
+			<script type="text/template">
+				## Статическая\Динамическая
+
+				```php
+				namespace MyExt;
+
+				class Test {
+					public fn test(var a, array b, int c)
+					{
+						int a  = 5;
+
+						return a + c;
+					}
+				}
+				```
+			</script>
+		</section>
 
 		<section data-markdown>
 			<script type="text/template">
@@ -1285,6 +1284,10 @@ class Application
 				<br>
 				<a href="http://github.com/phalcon/zephir">http://github.com/phalcon/zephir</a>
 			</p>
+
+			<h2>
+				<a href="http://dmtry.me/codefest2015">http://dmtry.me/codefest2015</a>
+			</h2>
 		</section>
 	</div>
 </div>

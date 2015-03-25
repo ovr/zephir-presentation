@@ -61,7 +61,7 @@
 					labels: {
 						rotation: 0,
 						style: {
-							fontSize: '24px',
+							fontSize: '32px',
 							fontFamily: 'Verdana, sans-serif'
 						}
 					}
@@ -70,7 +70,7 @@
 					min: 0,
 					labels: {
 						style: {
-							fontSize: '24px',
+							fontSize: '28px',
 							fontFamily: 'Verdana, sans-serif'
 						}
 					}
@@ -261,39 +261,39 @@
 			</script>
 		</section>
 
-		<section data-background="bg.png">
-			<h2>Производительность MVC (RPM)</h2>
+		<!--<section data-background="bg.png">-->
+			<!--<h2>Производительность MVC (RPM)</h2>-->
 
-			Количество запросов в минуту
+			<!--Количество запросов в минуту-->
 
-			<div id="perfomance-bench-full-rpm" class="bench-graph"></div>
-			<script>
-				$(function () {
-					$('#perfomance-bench-full-rpm').highcharts({
-						yAxis: {
-							min: 0,
-							title: {
-								text: 'RPM'
-							}
-						},
-						tooltip: {
-							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
-						},
-						series: [{
-							name: 'Framework',
-							data: [
-//								['Hello World', 9800*60],
-								['Phalcon 2', 3054*60],
-								['Zend Framework 2.3.7', 527*60],
-								['Yii 2.0.3', 823*60],
-								['Symfony 2.6.3', 794*60]
-							],
-							dataLabels: window.dataLabels
-						}]
-					});
-				});
-			</script>
-		</section>
+			<!--<div id="perfomance-bench-full-rpm" class="bench-graph"></div>-->
+			<!--<script>-->
+				<!--$(function () {-->
+					<!--$('#perfomance-bench-full-rpm').highcharts({-->
+						<!--yAxis: {-->
+							<!--min: 0,-->
+							<!--title: {-->
+								<!--text: 'RPM'-->
+							<!--}-->
+						<!--},-->
+						<!--tooltip: {-->
+							<!--pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'-->
+						<!--},-->
+						<!--series: [{-->
+							<!--name: 'Framework',-->
+							<!--data: [-->
+<!--//								['Hello World', 9800*60],-->
+								<!--['Phalcon 2', 3054*60],-->
+								<!--['Zend Framework 2.3.7', 527*60],-->
+								<!--['Yii 2.0.3', 823*60],-->
+								<!--['Symfony 2.6.3', 794*60]-->
+							<!--],-->
+							<!--dataLabels: window.dataLabels-->
+						<!--}]-->
+					<!--});-->
+				<!--});-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png">
 			<h2>Производительность Micro (RPS)</h2>
@@ -1289,6 +1289,9 @@ class Application
 <style type="text/css">
 	.bench-graph {
 		min-width: 85%; height: 80%; margin: 0 auto
+	}
+	.bench-graph .highcharts-container {
+		margin: 0 auto;
 	}
 	.backgrounds {
 		background-repeat: no-repeat;

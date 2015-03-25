@@ -154,7 +154,7 @@
 				# Плюсы
 
 				+ Производительность (~6 раз быстрее Zend 2)
-				+ Низкое потребление памяти (0.75МБ)
+				+ Низкое потребление памяти (0.75 Мб)
 				+ Простота использования (в коде)
 				+ Наличие готовых решений
 				+ Большая универсальность
@@ -166,7 +166,7 @@
 				# Минусы
 
 				+ Разработка и исправление
-				+ Отладка (gdb узечение и тд и valgrind)
+				+ Отладка (GDB, Valgrind)
 			</script>
 		</section>
 
@@ -994,7 +994,8 @@ class Application
 				function calculateMath() {
 					int i;
 
-					for i in range(1, 140000) {
+					// 200 000
+					for i in range(1, 200000) {
 						abs(i);
 						acos(i);
 						asin(i);
@@ -1007,7 +1008,7 @@ class Application
 
 				#### Zephir time: 0.08000
 				#### PHP: 10.0
-				#### Zephir without Optimizers (function call): 23.000
+				<!--#### Zephir without Optimizers (function call): 23.000-->
 			</script>
 		</section>
 
@@ -1185,7 +1186,7 @@ class Application
 			<script type="text/template">
 				# Ну а вообще
 
-				## Ansible или Puppet
+				## Ansible, Chef или Puppet
 			</script>
 		</section>
 

@@ -1312,9 +1312,11 @@ class Application
 	.welcome-slide > div.text {
 		width: 1350px;
 		/*float: right;*/
-		/*top: 0;*/
+		top: 0;
 		text-align: left;
 		padding-left: 30%;
+		margin: 0;
+		padding: 0;
 	}
 </style>
 <script>
@@ -1325,10 +1327,12 @@ class Application
 		history: true,
 		center: true,
 
+		margin: 0,
+
 		transition: 'none', // none/fade/slide/convex/concave/zoom
 		backgroundTransition: 'none',
 //		parallaxBackgroundImage: 'bg.png',
-		parallaxBackgroundSize: '1920px 1080px',
+//		parallaxBackgroundSize: '1920px 1080px',
 
 		width: 1920,
 		height: 1080,

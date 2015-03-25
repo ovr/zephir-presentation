@@ -902,83 +902,82 @@ class Application
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Числа Фибоначчи (PHP)
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Числа Фибоначчи (PHP)-->
 
-				```php
-				<?php
+				<!--```php-->
+				<!--<?php-->
 
-				namespace Test;
+				<!--namespace Test;-->
 
-				function fibonacci($n) {
-					if ($n >= 2) {
-						return fibonacci($n - 1) + fibonacci($n - 2);
-					}
+				<!--function fibonacci($n) {-->
+					<!--if ($n >= 2) {-->
+						<!--return fibonacci($n - 1) + fibonacci($n - 2);-->
+					<!--}-->
 
-					return $n;
-				}
+					<!--return $n;-->
+				<!--}-->
 
-				var_dump(fibonacci(30));
-				```
+				<!--var_dump(fibonacci(30));-->
+				<!--```-->
 
-				PHP time: 22.278899908066
-			</script>
-		</section>
+				<!--PHP time: 22.278899908066-->
+			<!--</script>-->
+		<!--</section>-->
 
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Числа Фибоначчи (Zephir с Си функцией)-->
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Числа Фибоначчи (Zephir с Си функцией)
+				<!--```php-->
+				<!--namespace Test;-->
 
-				```php
-				namespace Test;
+				<!--function calculateNonOptimise(int n) -> int-->
+				<!--{-->
+					<!--if n >= 2 {-->
+						<!--return this->calculateNonOptimise(n - 1) + $this->calculateNonOptimise(n - 2);-->
+					<!--}-->
 
-				function calculateNonOptimise(int n) -> int
-				{
-					if n >= 2 {
-						return this->calculateNonOptimise(n - 1) + $this->calculateNonOptimise(n - 2);
-					}
+					<!--return n;-->
+				<!--}-->
+				<!--```-->
 
-					return n;
-				}
-				```
+				<!--Zephir without C time: 23.107372999191-->
+			<!--</script>-->
+		<!--</section>-->
 
-				Zephir without C time: 23.107372999191
-			</script>
-		</section>
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Числа Фибоначчи (Zephir с Си функцией)-->
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Числа Фибоначчи (Zephir с Си функцией)
+				<!--```php-->
+				<!--namespace Test;-->
 
-				```php
-				namespace Test;
+				<!--%{-->
+					<!--static inline int test_bench_fibonacci(int n) {-->
+						<!--if (n >= 2) {-->
+							<!--return test_bench_fibonacci(n - 1) + test_bench_fibonacci(n - 2);-->
+						<!--}-->
 
-				%{
-					static inline int test_bench_fibonacci(int n) {
-						if (n >= 2) {
-							return test_bench_fibonacci(n - 1) + test_bench_fibonacci(n - 2);
-						}
+						<!--return n;-->
+					<!--}-->
+				<!--}%-->
 
-						return n;
-					}
-				}%
+				<!--function calculate(int n) {-->
+					<!--int result = 0;-->
 
-				function calculate(int n) {
-					int result = 0;
+					<!--%{-->
+						<!--result = test_bench_fibonacci(n);-->
+					<!--}%-->
 
-					%{
-						result = test_bench_fibonacci(n);
-					}%
+					<!--return result;-->
+				<!--}-->
+				<!--```-->
 
-					return result;
-				}
-				```
-
-				Zephir time: 0.0059828758239746
-			</script>
-		</section>
+				<!--Zephir time: 0.0059828758239746-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">

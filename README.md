@@ -1,6 +1,16 @@
 Phalcon и Zephir
 ================
 
+Get the presentation
+
+```
+git clone git@github.com:ovr/zephir-presentation.git
+cd zephir-presentation
+npm install
+```
+
+open index.html in the browser.
+
 ### Фото
 
 http://cs417629.vk.me/v417629163/dfb2/zlCdi34xpg0.jpg

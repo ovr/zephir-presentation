@@ -91,6 +91,11 @@
 		});
 	</script>
 </head>
+<style>
+	body {
+		background-color: #009ce7;
+	}
+</style>
 <body>
 <div class="reveal">
 	<div class="slides">
@@ -211,26 +216,26 @@
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Максимум Nginx + FPM
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Максимум Nginx + FPM-->
 
-				### 9800 RPS ~ 588K RPM
+				<!--### 9800 RPS ~ 588K RPM-->
 
-				```php
-				<?php
-				echo "Hello, World!";
-				```
+				<!--```php-->
+				<!--<?php-->
+				<!--echo "Hello, World!";-->
+				<!--```-->
 
-				<!--### Помним что будет сравнивать производительность относительно!-->
-			</script>
-		</section>
+				<!--&lt;!&ndash;### Помним что будет сравнивать производительность относительно!&ndash;&gt;-->
+			<!--</script>-->
+		<!--</section>-->
 
 
 		<section data-background="bg.png">
 			<h2>Производительность MVC (RPS)</h2>
 
-			Количество запросов в секунду
+			<!--Количество запросов в секунду-->
 
 			<div id="perfomance-bench-full" class="bench-graph"></div>
 			<script>
@@ -250,7 +255,7 @@
 							data: [
 //								['Hello World', 9800],
 								['Phalcon 2', 3054],
-								['Zend Framework 2.3.7', 527],
+								['ZF 2.3.7', 527],
 								['Yii 2.0.3', 823],
 								['Symfony 2.6.3', 794]
 							],
@@ -298,7 +303,8 @@
 		<section data-background="bg.png">
 			<h2>Производительность Micro (RPS)</h2>
 
-			Количество запросов в секунду
+			<!--Количество запросов в секунду-->
+
 			<div id="perfomance-bench-micro" class="bench-graph"></div>
 			<script>
 				$(function () {
@@ -315,7 +321,7 @@
 						series: [{
 							name: 'Framework',
 							data: [
-								['Hello World', 9800],
+//								['Hello World', 9800],
 								['Phalcon 2 Micro', 6863],
 								['Silex 1.2.3', 2491],
 								['Slim 2.6.2', 4127]
@@ -426,7 +432,8 @@
 			</h3>
 
 			<p>
-				Zephir — это высокоуровневый язык программирования с открытым исходным кодом для быстрого и простого
+				Zephir — это высокоуровневый язык программирования
+				с открытым исходным кодом для быстрого и простого
 				создания PHP расширений.
 			</p>
 		</section>
@@ -533,7 +540,7 @@ class Application
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">
-				Установка значений
+				## Установка значений
 
 				<p>
 					осуществляется через оператор let
@@ -1279,7 +1286,7 @@ class Application
 				<a href="http://github.com/phalcon/zephir">https://github.com/ovr/phalcon-module-skeleton</a>
 			</p>
 
-			<h1 style="text-align: center;">
+			<h1>
 				<a href="http://dmtry.me/codefest2015">http://dmtry.me/codefest2015</a>
 			</h1>
 		</section>
@@ -1287,8 +1294,13 @@ class Application
 </div>
 
 <style type="text/css">
-	.bench-graph {
-		min-width: 85%; height: 80%; margin: 0 auto
+	.bench-graph,
+	#perfomance-bench-micro,
+	#perfomance-bench-full,
+	#perfomance-bench-app {
+		width: 1632px;
+		height: 800px;
+		margin: 0 auto;
 	}
 	.bench-graph .highcharts-container {
 		margin: 0 auto;
@@ -1316,7 +1328,7 @@ class Application
 		text-align: left;
 		padding-left: 30%;
 		margin: 0;
-		padding: 0;
+		/*padding: 0;*/
 	}
 </style>
 <script>
@@ -1326,8 +1338,6 @@ class Application
 		progress: false,
 		history: true,
 		center: true,
-
-		margin: 0,
 
 		transition: 'none', // none/fade/slide/convex/concave/zoom
 		backgroundTransition: 'none',

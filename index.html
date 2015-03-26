@@ -576,43 +576,43 @@ class Application
 			</script>
 		</section>
 
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--Получение значений после проверки isset-->
+
+				<!--Было-->
+
+				<!--```php-->
+				<!--<?php-->
+
+				<!--$a = ["test" => 1];-->
+
+				<!--if (isset($a["test"])) {-->
+					<!--$value = $a["test"];-->
+					<!--// ...-->
+				<!--}-->
+
+				<!--return $value;-->
+				<!--```-->
+
+				<!--Стало-->
+
+				<!--```php-->
+				<!--var value;-->
+				<!--array a = ["test" : 1];-->
+
+				<!--if fetch value, a["test"] {-->
+					<!--//...-->
+				<!--}-->
+
+				<!--return value;-->
+				<!--```-->
+			<!--</script>-->
+		<!--</section>-->
+
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">
-				Получение значений после проверки isset
-
-				Было
-
-				```php
-				<?php
-
-				$a = ["test" => 1];
-
-				if (isset($a["test"])) {
-					$value = $a["test"];
-					// ...
-				}
-
-				return $value;
-				```
-
-				Стало
-
-				```php
-				var value;
-				array a = ["test" : 1];
-
-				if fetch value, a["test"] {
-					//...
-				}
-
-				return value;
-				```
-			</script>
-		</section>
-
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-			## Нативные getter/setter/toString
+			## Нативные getter/setter
 
 			PHP
 

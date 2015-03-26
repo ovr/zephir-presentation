@@ -440,48 +440,47 @@
 			<script type="text/template">
 			## Самые видимые различия после PHP
 
-			+ Ура больше нет <?php
-			+ Прощай $
 			+ Переменная должна быть объявлена перед использованием
 			+ Статическая\Динамическая типизация
 			+ Пишем все в пространстве имен
 			+ Глобальный код запрещен
 			+ Компиляция Ahead-of-time (AOT)
+			+ Ура больше нет <?php и $
 			+ Безопасная работа с памятью (Memory safety)
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown class="fullscreen-code">
-			<script type="text/template">
-```php
-namespace Owl;
+		<!--<section data-background="bg.png" data-markdown class="fullscreen-code">-->
+			<!--<script type="text/template">-->
+<!--```php-->
+<!--namespace Owl;-->
 
-use Http\Request;
-use Http\Response;
+<!--use Http\Request;-->
+<!--use Http\Response;-->
 
-class Application
-{
-	protected di {get};
-	protected request {get};
-	protected response {get};
+<!--class Application-->
+<!--{-->
+	<!--protected di {get};-->
+	<!--protected request {get};-->
+	<!--protected response {get};-->
 
-	public fn handle(<Request> request, <Response> response = null) -> <Response>
-	{
-		var matchedRoute, router;
+	<!--public fn handle(<Request> request, <Response> response = null) -> <Response>-->
+	<!--{-->
+		<!--var matchedRoute, router;-->
 
-		let router = this->di->get("router");
-		let matchedRoute = router->matchRequest(request);
+		<!--let router = this->di->get("router");-->
+		<!--let matchedRoute = router->matchRequest(request);-->
 
-		if (is_null(response)) {
-			let response = new Response();
-		}
+		<!--if (is_null(response)) {-->
+			<!--let response = new Response();-->
+		<!--}-->
 
-		return response;
-	}
-}
-```
-			</script>
-		</section>
+		<!--return response;-->
+	<!--}-->
+<!--}-->
+<!--```-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">
@@ -506,24 +505,24 @@ class Application
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Статическая\Динамическая
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Статическая\Динамическая-->
 
-				```php
-				namespace MyExt;
+				<!--```php-->
+				<!--namespace MyExt;-->
 
-				class Test {
-					public fn test(var a, array b, int c)
-					{
-						int a  = 5;
+				<!--class Test {-->
+					<!--public fn test(var a, array b, int c)-->
+					<!--{-->
+						<!--int a  = 5;-->
 
-						return a + c;
-					}
-				}
-				```
-			</script>
-		</section>
+						<!--return a + c;-->
+					<!--}-->
+				<!--}-->
+				<!--```-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">
@@ -668,25 +667,25 @@ class Application
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Использование диапазонов
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Использование диапазонов-->
 
-				```zep
-				class Test {
-					public function getRange() -> array
-					{
-						return [1..100]; //Массив на 100 элементов
-					}
+				<!--```zep-->
+				<!--class Test {-->
+					<!--public function getRange() -> array-->
+					<!--{-->
+						<!--return [1..100]; //Массив на 100 элементов-->
+					<!--}-->
 
-					public function getOptionalRange() -> array
-					{
-						return [1...100]; //Массив на 98 элементов
-					}
-				}
-				```
-			</script>
-		</section>
+					<!--public function getOptionalRange() -> array-->
+					<!--{-->
+						<!--return [1...100]; //Массив на 98 элементов-->
+					<!--}-->
+				<!--}-->
+				<!--```-->
+			<!--</script>-->
+		<!--</section>-->
 
 
 		<section data-background="bg.png" data-markdown>
@@ -843,34 +842,34 @@ class Application
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Статический анализ в ветках
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Статический анализ в ветках-->
 
-				```zep
-				namespace Test;
+				<!--```zep-->
+				<!--namespace Test;-->
 
-				function testIfBranch(var v)
-				{
-					var z;
+				<!--function testIfBranch(var v)-->
+				<!--{-->
+					<!--var z;-->
 
-					if !empty v {
-						let z = v;
-					}
-				}
-				```
+					<!--if !empty v {-->
+						<!--let z = v;-->
+					<!--}-->
+				<!--}-->
+				<!--```-->
 
-				Но получим Warning
+				<!--Но получим Warning-->
 
-				```applescript
-				Warning: Variable "z" assigned but not used in Test::testIfBranch in
-				/Users/ovr/projects/zephir/functional.zep on 5 [unused-variable]
+				<!--```applescript-->
+				<!--Warning: Variable "z" assigned but not used in Test::testIfBranch in-->
+				<!--/Users/ovr/projects/zephir/functional.zep on 5 [unused-variable]-->
 
-						let z = v;
-				----------------^
-				```
-			</script>
-		</section>
+						<!--let z = v;-->
+				<!------------------^-->
+				<!--```-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">
@@ -1139,7 +1138,7 @@ class Application
 				+ Переработка архитектуры на раздельные компоненты
 				+ Больше бекендов (PHP, Hack, PHP-CPP)
 				+ Развитие Zephir Runtime
-				+ Возможно попробуем реализовать ZephirVM*
+				+ Хотим реализовать ZephirVM*
 			</script>
 		</section>
 
@@ -1190,65 +1189,64 @@ class Application
 			</script>
 		</section>
 
-		<section data-background="bg.png" data-markdown>
-			<script type="text/template">
-				## Пример контроллера для REST API
+		<!--<section data-background="bg.png" data-markdown>-->
+			<!--<script type="text/template">-->
+				<!--## Пример контроллера для REST API-->
 
-				```php
-				/**
-				 * @RoutePrefix("/api/users")
-				 */
-				class UsersController extends RestController
-				{
-					/**
-					 * @Get("/{id:[0-9]+}", name="get-user")
-					 */
-					public function getAction($id)
-					{
-						/** @var $user Entity|boolean */
-						$user = $em->find('User\Model\Entity', $id);
-						if (!$user) {
-							throw new Exception('User not found', 404);
-						}
+				<!--```php-->
+				<!--/**-->
+				 <!--* @RoutePrefix("/api/users")-->
+				 <!--*/-->
+				<!--class UsersController extends RestController-->
+				<!--{-->
+					<!--/**-->
+					 <!--* @Get("/{id:[0-9]+}", name="get-user")-->
+					 <!--*/-->
+					<!--public function getAction($id)-->
+					<!--{-->
+						<!--/** @var $user Entity|boolean */-->
+						<!--$user = $em->find('User\Model\Entity', $id);-->
+						<!--if (!$user) {-->
+							<!--throw new Exception('User not found', 404);-->
+						<!--}-->
 
-						return array(
-							'id' => $user->id,
-							'firstname' => $user->firstname
-						);
-					}
-				}
-				```
-			</script>
-		</section>
+						<!--return array(-->
+							<!--'id' => $user->id,-->
+							<!--'firstname' => $user->firstname-->
+						<!--);-->
+					<!--}-->
+				<!--}-->
+				<!--```-->
+			<!--</script>-->
+		<!--</section>-->
 
-		<section data-background="bg.png">
-			<h3>Производительность реального приложения</h3>
+		<!--<section data-background="bg.png">-->
+			<!--<h3>Производительность реального приложения</h3>-->
 
-			<div id="perfomance-bench-app" class="bench-graph"></div>
-			<script>
-				$(function () {
-					$('#perfomance-bench-app').highcharts({
-						yAxis: {
-							title: {
-								text: 'RPM'
-							}
-						},
-						tooltip: {
-							pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'
-						},
-						series: [{
-							name: 'Framework',
-							data: [
-								['Phalcon 2 + Phalcon ORM', 650],
-								['Phalcon 2 + Doctrine 2 ORM', 270]
-//								['Daemonize Phalcon 2 + Doctrine 2', 1600]
-							],
-							dataLabels: window.dataLabels
-						}]
-					});
-				});
-			</script>
-		</section>
+			<!--<div id="perfomance-bench-app" class="bench-graph"></div>-->
+			<!--<script>-->
+				<!--$(function () {-->
+					<!--$('#perfomance-bench-app').highcharts({-->
+						<!--yAxis: {-->
+							<!--title: {-->
+								<!--text: 'RPM'-->
+							<!--}-->
+						<!--},-->
+						<!--tooltip: {-->
+							<!--pointFormat: 'Perfomance <b>{point.y:.1f} responses per minute.</b>'-->
+						<!--},-->
+						<!--series: [{-->
+							<!--name: 'Framework',-->
+							<!--data: [-->
+								<!--['Phalcon 2 + Phalcon ORM', 650],-->
+								<!--['Phalcon 2 + Doctrine 2 ORM', 270]-->
+							<!--],-->
+							<!--dataLabels: window.dataLabels-->
+						<!--}]-->
+					<!--});-->
+				<!--});-->
+			<!--</script>-->
+		<!--</section>-->
 
 		<section data-background="bg.png" data-markdown>
 			<script type="text/template">

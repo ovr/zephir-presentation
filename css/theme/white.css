@@ -128,7 +128,7 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 94%;
+  width: 100%;
   margin: 20px auto;
   text-align: left;
   font-size: 0.6em;

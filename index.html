@@ -773,14 +773,14 @@
 				```zep
 				namespace Test;
 
-				function anonymouseKeyFor(var data)
+				function anonymouseKeyFor(array data)
 				{
 					for _ in data {
 						echo "hello";
 					}
 				}
 
-				function anonymouseValueWalk(var data)
+				function anonymouseValueWalk(array data)
 				{
 					data->walk(
 						function(_, int key) { echo key; }
